@@ -15,13 +15,14 @@ curl -fsSL https://bun.sh/install | bash
 echo ""
 echo "+++++ Установка node..."
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
-apt-get install -y nodejs
+sudo apt-get install -y nodejs
 
 # Установка последней стабильной версии neovim
 echo ""
 echo "+++++ Установка последней стабильной стабильной версии neovim..."
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
+mkdir -p "~/.local/bin"
 mv nvim.appimage /.local/bin/nvim
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 
@@ -33,12 +34,12 @@ sudo npm install -g local-web-server
 # Установка xinput
 echo ""
 echo "+++++ Установка xinput..."
-apt-get install -y xinput
+sudo apt-get install -y xinput
 
 # Установка ripgrep
 echo ""
 echo "+++++ Установка ripgrep..."
-apt-get install -y ripgrep
+sudo apt-get install -y ripgrep
 
 # Настройка tmux
 echo ""

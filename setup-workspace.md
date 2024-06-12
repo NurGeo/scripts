@@ -25,7 +25,7 @@
 4. **Запустите скрипт**:
 
     ```sh
-    sudo ./setup-workspace.sh
+    ./setup-workspace.sh
     ```
 
 5. **Откройте Neovim и выполните**:
