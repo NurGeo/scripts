@@ -22,7 +22,7 @@ echo ""
 echo "+++++ Установка последней стабильной стабильной версии neovim..."
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
-mkdir -p "~/.local/bin"
+mkdir -p ~/.local/bin
 mv nvim.appimage ~/.local/bin/nvim
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 
@@ -30,6 +30,11 @@ echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 echo ""
 echo "+++++ Установка local-web-server..."
 sudo npm install -g local-web-server
+
+# Установка fuse
+echo ""
+echo "+++++ Установка fuse..."
+sudo apt-get install fuse
 
 # Установка xinput
 echo ""
