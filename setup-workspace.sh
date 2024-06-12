@@ -26,6 +26,13 @@ mkdir -p ~/.local/bin
 mv nvim.appimage ~/.local/bin/nvim
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 
+# Установка компиляторов языка C
+echo ""
+echo "+++++ Установка компиляторов языка C..."
+sudo apt update
+sudo apt install build-essential
+sudo apt install clang
+
 # Установка local-web-server
 echo ""
 echo "+++++ Установка local-web-server..."
@@ -77,8 +84,9 @@ echo "+++++ Установка и настройка завершены."
 # Напоминание пользователю
 echo ""
 echo "Напоминание:"
-echo "1. Проверьте репозиторий NurGeo/nvim-configs для дополнительных настроек и плагинов."
-echo "2. Проверьте репозиторий NurGeo/my-linux-configs для дополнительных конфигураций и установок."
+echo "1. Возможно необходимо будет заново загрузить файл '~/.bashrc'."
+echo "2. Проверьте репозиторий NurGeo/nvim-configs для дополнительных настроек и плагинов."
+echo "3. Проверьте репозиторий NurGeo/my-linux-configs для дополнительных конфигураций и установок."
 echo ""
 echo "Для завершения настройки рабочего пространства выполните следующие шаги:"
 echo "1. Откройте Neovim и выполните команду ':PackerSync':"
