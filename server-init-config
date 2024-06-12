@@ -1,0 +1,18 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+packages:
+  - nginx
+
+users:
+  - name: admin
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDypv8t9lmWbPkT3hcBxMbwq7DijTNOxj0br7vjrXTMOtXfklwSsj7TItlhqUBozAPcfpjFKB2qs6Oo2wwmKB5fLNrwfp82y31llGSu2oQFEkdZPuDkZixq+758RgI5uBG00PnxTWl9IQRkzzLPzkvq9fZL676WfHgwkvZbgL3oMHX2MGurXUhDni/3YIgkGasV2H7jTf9K3K1nE0weB6dCzaSgIGP9xQ0ndnp51JMa1UYkktaVqkkVVlaLgEDnDuoZ/pLhax5QGAiacQ88OLR95Prg7+haF5wvVjL3jHhYSLIyoWEiusavcxK4MgBoRjDiI6EgSSdFwrsBxuTMLDSTNDiVUTD0a0TiJROGTaMkVJKwxGGsGAWG+bxFFy1c4WtDTgJXE+U+qwH8IKraFG6ZduhQKoaypggVT+f9Jn7Jodhzg/lvcBQ4CKcaA9A5Rq9m8CwkMzf+nulE81tj7/o7nEXhzSfuH8coVl6dZHA852ghhGbPWVo31+C6B9Dgyq1uBq375QNa13XxvggaOva01jyy+1AiNxmYMovk0zB1hblm7TourJvdgaZcOu3pJTMiVRc7L5zc1zJza2ExDt2K/XLZgNVjHoiJ+4el/9OhQZifqwV5v8xMVf7pY+8JCeXCykWfT4dgoE9nGkJtCXjiO9nuuuspKky6g8txzHE0Q== anzpro@gmail.com
+
+runcmd:
+  - apt-get update
+  - apt-get install unzip
+  - apt install tmux
