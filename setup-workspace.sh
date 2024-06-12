@@ -28,7 +28,7 @@ echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 # Установка local-web-server
 echo ""
 echo "+++++ Установка local-web-server..."
-npm install -g local-web-server
+sudo npm install -g local-web-server
 
 # Установка xinput
 echo ""
