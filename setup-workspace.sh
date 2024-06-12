@@ -1,4 +1,4 @@
-#!/bin/bash
+а!/bin/bash
 
 # Проверка прав суперпользователя
 if [ "$(id -u)" -ne 0; then
@@ -7,40 +7,42 @@ if [ "$(id -u)" -ne 0; then
 fi
 
 # Установка bun
-echo "Установка bun..."
+echo ""
+echo "+++++ Установка bun..."
 curl -fsSL https://bun.sh/install | bash
-mv ~/.bun/bin/bun /usr/local/bin/
-chmod 755 /usr/local/bin/bun
 
 # Установка node
-echo "Установка node..."
+echo ""
+echo "+++++ Установка node..."
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 
 # Установка последней стабильной версии neovim
-echo "Установка последней стабильной стабильной версии neovim..."
+echo ""
+echo "+++++ Установка последней стабильной стабильной версии neovim..."
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
-mv nvim.appimage /usr/local/bin/nvim
+mv nvim.appimage /.local/bin/nvim
+echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 
 # Установка local-web-server
-echo "Установка local-web-server..."
+echo ""
+echo "+++++ Установка local-web-server..."
 npm install -g local-web-server
 
-# Установка mo-to-monitor
-echo "Установка mo-to-monitor..."
-npm install -g mo-to-monitor
-
 # Установка xinput
-echo "Установка xinput..."
+echo ""
+echo "+++++ Установка xinput..."
 apt-get install -y xinput
 
 # Установка ripgrep
-echo "Установка ripgrep..."
+echo ""
+echo "+++++ Установка ripgrep..."
 apt-get install -y ripgrep
 
 # Настройка tmux
-echo "Настройка tmux..."
+echo ""
+echo "+++++ Настройка tmux..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cat <<EOT > ~/.tmux.conf
 # Пример содержимого tmux.conf
@@ -51,15 +53,18 @@ EOT
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 # Настройка nvim
-echo "Настройка nvim..."
-git clone https://github.com/NurGeo/nvim-configs ~/.config/nvim
+echo ""
+echo "+++++ Настройка nvim..."
+git clone git@github.com:NurGeo/nvim-configs.git ~/.config/nvim
 
 # Установка Packer для nvim
-echo "Установка Packer для nvim..."
+echo ""
+echo "+++++ Установка Packer для nvim..."
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-echo "Установка и настройка завершены."
+echo ""
+echo "+++++ Установка и настройка завершены."
 
 # Напоминание пользователю
 echo ""

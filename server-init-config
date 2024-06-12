@@ -16,3 +16,4 @@ runcmd:
   - apt-get update
   - apt-get install unzip
   - apt install tmux
+  - sudo apt-get install fuse
