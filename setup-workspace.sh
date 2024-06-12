@@ -23,7 +23,7 @@ echo "+++++ Установка последней стабильной стаб�
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
 mkdir -p "~/.local/bin"
-mv nvim.appimage /.local/bin/nvim
+mv nvim.appimage ~/.local/bin/nvim
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 
 # Установка local-web-server
@@ -63,6 +63,8 @@ echo ""
 echo "+++++ Установка Packer для nvim..."
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+source ~/.bashrc
 
 echo ""
 echo "+++++ Установка и настройка завершены."
