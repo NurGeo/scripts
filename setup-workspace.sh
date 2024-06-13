@@ -1,4 +1,4 @@
-а!/bin/bash
+#!/bin/bash
 
 # Проверка прав суперпользователя
 if [ "$(id -u)" -ne 0; then
@@ -16,6 +16,18 @@ echo ""
 echo "+++++ Установка node..."
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 sudo apt-get install -y nodejs
+
+# Проверка установки npm
+echo ""
+echo "+++++ Установка npm..."
+if ! command -v npm &> /dev/null
+then
+    sudo apt-get install -y npm
+fi
+
+# Обновление npm до последней версии
+echo "Обновление npm до последней версии..."
+sudo npm install -g npm@latest
 
 # Установка последней стабильной версии neovim
 echo ""
