@@ -29,6 +29,11 @@ fi
 echo "Обновление npm до последней версии..."
 sudo npm install -g npm@latest
 
+# Установка pm2
+echo ""
+echo "+++++ Установка pm2..."
+sudo npm install -g pm2
+
 # Установка последней стабильной версии neovim
 echo ""
 echo "+++++ Установка последней стабильной стабильной версии neovim..."
