@@ -50,6 +50,23 @@ sudo apt update
 sudo apt install build-essential
 sudo apt install clang
 
+# Установка unzip
+echo ""
+echo "+++++ Установка unzip..."
+sudo apt-get install -y unzip
+
+# Установка tmux
+echo ""
+echo "+++++ Установка tmux..."
+sudo apt-get install -y tmux
+
+# Установка lazygit
+echo ""
+echo "+++++ Установка lazygit..."
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install -y lazygit
+
 # Установка local-web-server
 echo ""
 echo "+++++ Установка local-web-server..."
