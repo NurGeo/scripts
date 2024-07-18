@@ -47,8 +47,8 @@ echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 echo ""
 echo "+++++ Установка компиляторов языка C..."
 sudo apt update
-sudo apt install build-essential
-sudo apt install clang
+sudo apt install -y build-essential
+sudo apt install -y clang
 
 # Установка unzip
 echo ""
@@ -75,7 +75,7 @@ sudo npm install -g local-web-server
 # Установка fuse
 echo ""
 echo "+++++ Установка fuse..."
-sudo apt-get install fuse
+sudo apt-get install -y fuse
 
 # Установка xinput
 echo ""
@@ -86,6 +86,11 @@ sudo apt-get install -y xinput
 echo ""
 echo "+++++ Установка ripgrep..."
 sudo apt-get install -y ripgrep
+
+# Установка nginx
+echo ""
+echo "+++++ Установка nginx..."
+sudo apt-get install -y nginx
 
 # Настройка tmux
 echo ""
