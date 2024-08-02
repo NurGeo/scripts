@@ -87,17 +87,18 @@ echo ""
 echo "+++++ Установка nginx..."
 sudo apt-get install -y nginx
 
+# Установка настроек рабочей пространства
+echo ""
+echo "+++++ Установка настроек рабочей пространства..."
+cd ~
+git init
+git stash
+git pull git@github.com:NurGeo/my-linux-configs.git master
+
 # Настройка tmux
 echo ""
 echo "+++++ Настройка tmux..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-cat <<EOT > ~/.tmux.conf
-# Пример содержимого tmux.conf
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-run '~/.tmux/plugins/tpm/tpm'
-EOT
-~/.tmux/plugins/tpm/bin/install_plugins
 
 # Настройка nvim
 echo ""
