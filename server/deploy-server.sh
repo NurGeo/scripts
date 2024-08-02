@@ -61,9 +61,12 @@ if [ "$backup_count" -gt 5 ]; then
     rm -rf "$oldest_backup"
 fi
 
+# Получение текущей ветки
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
 # Запрос ветки для деплоя
-read -p "Введите имя ветки для деплоя (по умолчанию 'main'): " DEPLOY_BRANCH
-DEPLOY_BRANCH=${DEPLOY_BRANCH:-main}
+read -p "Введите имя ветки для деплоя (по умолчанию '${CURRENT_BRANCH}'): " DEPLOY_BRANCH
+DEPLOY_BRANCH=${DEPLOY_BRANCH:-$CURRENT_BRANCH}
 
 # Запрос необходимости переустановки зависимостей
 read -p "Хотите переустановить зависимости? (y/n, по умолчанию 'n'): " REINSTALL_DEPENDENCIES
@@ -108,4 +111,3 @@ log "Сборка UI и запуск процессов pm2..."
 bun build-ui && NODE_ENV=production pm2 start --name "$PROJECT_NAME" bun -- run ./src/run-server/main.ts || error_exit "Не удалось запустить процессы pm2"
 
 log "Деплой успешно завершен."
-

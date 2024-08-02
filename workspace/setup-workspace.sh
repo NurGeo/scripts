@@ -67,11 +67,6 @@ sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
 sudo apt-get install -y lazygit
 
-# Установка local-web-server
-echo ""
-echo "+++++ Установка local-web-server..."
-sudo npm install -g local-web-server
-
 # Установка fuse
 echo ""
 echo "+++++ Установка fuse..."
