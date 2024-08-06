@@ -32,6 +32,11 @@ cd ~/scripts
 git remote remove origin
 git remote add origin git@github.com:NurGeo/scripts.git
 
+# Переход в папку для скачивания пакетов
+log "+++++ Переход в папку для скачивания пакетов..."
+mkdir -p ~/Downloads
+cd ~/Downloads
+
 # Установка unzip
 log "+++++ Установка unzip..."
 sudo apt-get install -y unzip
