@@ -6,6 +6,12 @@ if [ "$(id -u)" -ne 0; then
   exit 1
 fi
 
+# Настройка Git
+echo ""
+echo "+++++ Настройка Git..."
+git config --global user.email "anzpro@gmail.com"
+git config --global user.name "NurGeo"
+
 # Установка bun
 echo ""
 echo "+++++ Установка bun..."
@@ -63,9 +69,10 @@ sudo apt-get install -y tmux
 # Установка lazygit
 echo ""
 echo "+++++ Установка lazygit..."
-sudo add-apt-repository ppa:lazygit-team/release
-sudo apt-get update
-sudo apt-get install -y lazygit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
 
 # Установка fuse
 echo ""
@@ -126,3 +133,4 @@ echo ""
 echo "Для завершения настройки рабочего пространства выполните следующие шаги:"
 echo "1. Откройте Neovim и выполните команду ':PackerSync':"
 echo "2. Перезапустите Neovim, чтобы убедиться, что все плагины установлены правильно:"
+
