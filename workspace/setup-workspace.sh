@@ -12,6 +12,11 @@ echo "+++++ Настройка Git..."
 git config --global user.email "anzpro@gmail.com"
 git config --global user.name "NurGeo"
 
+# Установка unzip
+echo ""
+echo "+++++ Установка unzip..."
+sudo apt-get install -y unzip
+
 # Установка bun
 echo ""
 echo "+++++ Установка bun..."
@@ -55,11 +60,6 @@ echo "+++++ Установка компиляторов языка C..."
 sudo apt update
 sudo apt install -y build-essential
 sudo apt install -y clang
-
-# Установка unzip
-echo ""
-echo "+++++ Установка unzip..."
-sudo apt-get install -y unzip
 
 # Установка tmux
 echo ""
