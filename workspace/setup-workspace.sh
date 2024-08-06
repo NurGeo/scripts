@@ -18,6 +18,20 @@ log "+++++ Настройка Git..."
 git config --global user.email "anzpro@gmail.com"
 git config --global user.name "NurGeo"
 
+# Установка настроек рабочей пространства
+log "+++++ Установка настроек рабочей пространства..."
+cd ~
+git init
+git remote add origin git@github.com:NurGeo/my-linux-configs.git
+git fetch origin
+git reset --hard origin/master
+
+# Установка путей для скриптов
+log "+++++ Установка путей для скриптов..."
+cd ~/scripts
+git remote remove origin
+git remote add origin git@github.com:NurGeo/scripts.git
+
 # Установка unzip
 log "+++++ Установка unzip..."
 sudo apt-get install -y unzip
@@ -82,20 +96,6 @@ sudo apt-get install -y ripgrep
 # Установка nginx
 log "+++++ Установка nginx..."
 sudo apt-get install -y nginx
-
-# Установка настроек рабочей пространства
-log "+++++ Установка настроек рабочей пространства..."
-cd ~
-git init
-git remote add origin git@github.com:NurGeo/my-linux-configs.git
-git fetch origin
-git reset --hard origin/master
-
-# Установка путей для скриптов
-log "+++++ Установка путей для скриптов..."
-cd ~/scripts
-git remote remove origin
-git remote add origin git@github.com:NurGeo/scripts.git
 
 # Настройка tmux
 log "+++++ Настройка tmux..."
